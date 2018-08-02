@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Description" content="issue tracker">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#317EFB"/>
+    <link rel="stylesheet" href="./test.css">
+    <link rel="manifest" href="./manifest.json">
+    <title>logIn</title>
+    
+   
+</head>
+<body>
+
+    <h1>----!!!Welcome to NameTBD!!!----</h1>
+    <h2>-----!!!NameTBD is an issue tracker!!!-----</h2>
+    
+    <div style="text-align: right; color: red">
+        <p>You are on firebase version now</p>
+    </div>
+
+    <form action="./index2.html" style="text-align: right">
+        <button type="submit">Go to REST Verson</button>
+    </form>
+    
+    <br>
+    <div class="T2" style="width: 100%; align-items: center; font-weight: bolder; text-align: center ;">     
+            
+            <div id="login_div" class="main-div">
+
+                <p style="font-size: 22pt; color: green; text-align: center"><b>Information to login!</b> </p>
+                <label style="font-size: 12pt" for="txtEmail"><b>Email: </b></label><br>
+                <input id="txtEmail" type="email" name="NameTBD" placeholder="Enter Your email address" size="10">
+                <br>
+            
+                <label style="font-size: 11pt" for="txtPassword"><b>Password: </b></label><br>
+                <input id="txtPassword" type="password" name="password" placeholder="Enter Your password" size="10">
+                <br>
+                <br>
+
+                <button onclick="login()">Log in</button>
+            
+                <br>
+                <p >New Account? <a style="font-size: 20pt" href="./SignUp.html">Sign Up</a></p>
+            </div>
+
+
+            <div id="list_div" class="loggedin-div">
+                    <div style="text-align: right">
+                        <button onclick="logout()" >Log out</button>
+                    </div>
+                    <p style="font-size: 20pt; color: green" id="user_para"></p>
+                    <div style="border:  2px solid black;">
+                    <blockquote>
+                            Some of the trouble with HTML and CSS lies with the fact that both languages are <em>fairly</em> 
+                            simple, and often <small>developers</small> don't take <strong>them seriously</strong>, in terms of making sure the code 
+                            is well-crafted, efficient, and semantically describes the purpose of the features on the page
+                          
+                        -<cite><a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/HTML_and_CSS">MDN web docs</a></cite>
+                    </blockquote>
+                    </div>
+                
+                
+                    <h2>Issue Lists</h2>
+    
+                <table id="table">  
+                    <tr>
+                        <th>Open?</th>
+                        <th>Detail</th>
+                        <th>Issue Name</th>
+                        <th>Issue Type</th>
+                        <th>Issue Description</th> 
+                    </tr>
+            
+                
+                    <tr>         
+                        <td style="color: blue ">OPEN</td>
+                        <td><a href="issue/Heading.html">detail</a></td>
+                        <td>Headings and Sections</td>
+                        <td>Heading and Sections type tags</td>
+                        <td>Tags like h1 and section should be explored.</td>
+
+                    </tr>
+
+                    <tr>
+                        <td style="color: blue ">OPEN</td>
+                        <td><a href="issue/Browser.html">detail</a></td>
+                        <td>Browser</td>
+                        <td>Browser such as Googl Crome, Firfox </td>
+                        <td>Some of the most common cross browser HTML and CSS problems.</td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td style="color: blue ">OPEN</td>
+                        <td><a href="issue/Image.html">detail</a></td>
+                        <td>Images</td>
+                        <td>img and picture tags</td>
+                        <td>Some problems about wrong use of tags related to images</td>
+                        
+                    </tr>
+                    <tr>
+                        <td style="color: blue ">OPEN</td>
+                        <td><a href="issue/Media.html">detail</a></td>
+                        <td>Media</td>
+                        <td> video and audio tags</td>
+                        <td>Some issuses about wrong use of tags related to media</td>
+                    
+                    </tr>
+                    <tr>
+                        <td style="color: blue ">OPEN</td>
+                        <td><a href="issue/Iframe.html">detail</a></td>
+                        <td>Iframe</td>
+                        <td> Ifram tag</td>
+                        <td>Some problems about wrong use of tags realted to Iframe</td>
+                        
+                    </tr>
+                    <tr>
+                        <td style="color: blue ">OPEN</td>
+                        <td><a href="issue/Form.html">detail</a></td>
+                        <td>Form</td>
+                        <td> form; tag, etc</td>
+                        <td>Test the form and all types of input tags</td>
+                        
+                    </tr>
+            
+                    <tr>  
+                        <td style="color: blue ">OPEN</td>
+                        <td><a href="issue/Structure.html">detail</a></td>
+                        <td>Structure</td>
+                        <td> div, span and section tags, etc</td>
+                        <td>Problems users have when they use inproperly tags to construct HTML structure</td>
+                    </tr>
+                
+                </table>
+                <br>
+
+                <div class="T1" style="border: 2px solid #4CAF50; width: 100%; text-align: left; font-weight: bolder">
+                    <p style="font-size: 30px; color: #4CAF50"><strong>Add, Edit, and Delete issues</strong></p>
+                    <p style="color: #4CAF50">(Click an issue you want to change!! on the table, so you can change the information in the input boxes below)</p>
+          
+                    <label for="name">Issue Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Issue Name" ><br>
+
+                    <label for="type">Issue Type</label>
+                    <input type="text" name="type" id="type" placeholder="Enter Issue Type"><br>
+                        
+                    <label for="description">Issue Description</label>
+                    <input type="text" name="description" id="description" placeholder="Enter the Description about the issue"><br>
+                    
+                    <label for="g">This is open?</label><br>       
+
+                    <select name="cars" size="2" id="g">
+                            <option value="O" style="color: blue; font-weight: bold;">OPEN</option>
+                            <option value="C" style="color: red; font-weight: bold">CLOSE</option>
+                    </select>
+              
+                    <br>
+                    <button onclick="addRow()" >Add</button>  
+                    <button onclick="editRow()">Edit</button>  
+                    <button onclick="deleteConfirm()">Delete</button>     
+                    <br>
+
+                </div> 
+                <br>
+             
+                <div style="text-align: left">
+                    <label for="uploader" style="color: green; font-size: 20pt">Upload files you wnat to store!</label><br>
+                    <progress value=0 max=100 id="uploader">0%</progress><br>                    
+                    <input type="file" id="file_upload" ><br>
+                </div>
+                    
+            </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyB2wrMTytnMUC_Mpo-VO_fqP0vea0PkTaU",
+            authDomain: "mylife-e8b4e.firebaseapp.com",
+            databaseURL: "https://mylife-e8b4e.firebaseio.com",
+            projectId: "mylife-e8b4e",
+            storageBucket: "mylife-e8b4e.appspot.com",
+            messagingSenderId: "439760436065"
+        };
+        firebase.initializeApp(config);
+
+        var uploader = document.getElementById('uploader');
+        var fileButton = document.getElementById('file_upload');
+
+        fileButton.addEventListener('change', function(e) {       
+            var file = e.target.files[0];  
+            var storageRef = firebase.storage().ref('folder/' + file.name);
+            var task = storageRef.put(file);  
+            task.on('state_changed',
+                function progress(snapshot) {
+                    var percentage = (snapshot.bytesTransferred/snapshot.totalBytes) *100;
+                                    uploader.value = percentage;
+                },
+                function error(err) {
+                },
+                function complete() {
+                }      
+            );
+        });
+    </script>
+
+    <script src="./Vworker.js"></script>
+    <script src="./app2.js"></script>
+    
+    <script>
+        var open = document.createElement('P');
+        open.innerHTML = "OPEN";
+        open.setAttribute("style", "color:blue" );
+
+        var close = document.createElement('P');
+        close.innerHTML = "CLOSE";
+        close.setAttribute("style", "color:red" );
+
+        var rIndex, table = document.getElementById("table");
+        var issues = firebase.database().ref('issues/');
+
+        issues.once('value', function(snapshot) {
+             snapshot.forEach(function(childSnapshot) {
+
+                var childKey = childSnapshot.key;
+                var childData = childSnapshot.val();
+                
+                var row = table.insertRow(table.length);
+
+                var col1 = row.insertCell(0);
+                var col2 = row.insertCell(1);
+                var col3 = row.insertCell(2);
+                var col4 = row.insertCell(3);
+                var col5 = row.insertCell(4);
+                
+                if(childData.issue_open == "OPEN") {
+                    col1.innerHTML = "";
+                    col1.appendChild(open);
+                }else if(childData.issue_open =="CLOSE"){
+                    col1.innerHTML = "";
+                    col1.appendChild(close);
+                }
+
+                var link = document.createElement('a');
+                link.setAttribute("href", "#");
+                link.innerHTML = "detail";
+
+                col2.appendChild(link);
+                col3.appendChild(document.createTextNode(childData.issue_name));
+                col4.appendChild(document.createTextNode(childData.issue_description));
+                col5.appendChild(document.createTextNode(childData.issue_type));
+             });
+             selectRow();
+        });
+  
+        //Add an issue
+        function addRow() {
+
+            var newRow = table.insertRow(table.length);
+    
+            var col1 = newRow.insertCell(0);
+            var col2 = newRow.insertCell(1);
+            var col3 = newRow.insertCell(2);
+            var col4 = newRow.insertCell(3);
+            var col5 = newRow.insertCell(4);
+
+            var checkvalue = document.getElementById("g").value;
+            var name = document.getElementById("name").value;
+            var type = document.getElementById("type").value;
+            var description = document.getElementById("description").value;
+            
+            //Add an issue in the table
+            var open = document.createElement('P');
+            open.innerHTML = "OPEN";
+            open.setAttribute("style", "color:blue" );
+
+            var close = document.createElement('P');
+            close.innerHTML = "CLOSE";
+            close.setAttribute("style", "color:red" );
+
+            if(checkvalue == "O") {
+                col1.innerHTML = "";
+                col1.appendChild(open);
+            }else if(checkvalue =="C"){
+                col1.innerHTML = "";
+                col1.appendChild(close);
+            }
+           
+            var link = document.createElement('a');
+            link.setAttribute("href", "#");
+            link.innerHTML = "detail";
+            
+            col2.appendChild(link);
+            col3.innerHTML = name;
+            col4.innerHTML = type;
+            col5.innerHTML = description;
+
+            //Add data in firebase
+            var OP;
+            if(checkvalue == "O") {
+                OP = "OPEN";
+            }else if(checkvalue =="C"){
+                OP = "CLOSE"; 
+            }
+            var myData = {
+                issue_open: OP,
+                issue_name: name,
+                issue_type: type,
+                issue_description: description
+            }
+            var add = {};
+            add['/issues/' + name] = myData;
+            firebase.database().ref().update(add);
+            selectRow();
+        }
+        
+        function selectRow() {
+            for(var i =1; i < table.rows.length; i++) {
+                table.rows[i].onclick = function() {
+                    rIndex = this.rowIndex;
+                    document.getElementById("name").value = this.cells[2].innerHTML;
+                    document.getElementById("type").value = this.cells[3].innerHTML;
+                    document.getElementById("description").value = this.cells[4].innerHTML;   
+                };
+            }
+        }    
+        selectRow();
+
+        //Edit an issue
+        function editRow() {
+            var checkvalue = document.getElementById("g").value;
+            var name = document.getElementById("name").value;
+            var type = document.getElementById("type").value;
+            var description = document.getElementById("description").value;
+            var checkbox = document.createElement("INPUT");
+            checkbox.setAttribute("type", "checkbox");
+            
+            //Edit an issue in firebase
+            var open = document.createElement('P');
+            open.innerHTML = "OPEN";
+            open.setAttribute("style", "color:blue" );
+            var close = document.createElement('P');
+            close.innerHTML = "CLOSE";
+            close.setAttribute("style", "color:red" );
+
+            if(checkvalue == "O") {
+                table.rows[rIndex].cells[0].innerHTML = "";
+                table.rows[rIndex].cells[0].appendChild(open);
+            }else if(checkvalue =="C"){
+                table.rows[rIndex].cells[0].innerHTML = "";
+                table.rows[rIndex].cells[0].appendChild(close);
+            }
+            var link = document.createElement('a');
+            link.setAttribute("href", "#");
+            link.innerHTML = "detail";
+            
+            table.rows[rIndex].cells[2].innerHTML = name;
+            table.rows[rIndex].cells[3].innerHTML = type;
+            table.rows[rIndex].cells[4].innerHTML = description;
+
+            //Edit an issue in firebase
+            var OP;
+            if(checkvalue == "O") {
+                OP = "OPEN";
+            }else if(checkvalue =="C"){
+                OP = "CLOSE"; 
+            } 
+            var myData = {
+                issue_open: OP,
+                issue_name: name,
+                issue_type: type,
+                issue_description: description
+            }
+
+            var add = {};
+            add['/issues/' + name] = myData;
+            firebase.database().ref().update(add);
+            
+            selectRow();
+   
+        }
+        
+        //Delete an issue
+        function deleteRow() {
+
+            //Delete an issue in table
+            table.deleteRow(rIndex);
+
+            //Delete an issue in firebase
+            var name = document.getElementById("name").value;
+            firebase.database().ref().child('/issues/' + name).remove();
+        }
+        
+        //Confirm message
+        function deleteConfirm() {
+            var x = confirm("Are you sure to delete this issue???");
+            if(x) {
+                return deleteRow();
+            }else {
+                return false;
+            }
+        }
+
+    </script>
+
+    <br>
+    <p style="text-align: left"><strong>Any Question?</strong></p>
+    <div class="Question?" style="border: 3px solid #4CAF50; width: 200px; font-weight: bolder;">
+        <p><strong>Conact information </strong><br> email: <a href="suc015@ucsd.edu">seunnnnnn@ucsd.edu</a></p>
+    </div>
+    
+    <details>
+        <summary style="text-align: left">Copyright</summary>
+        <p>All content and information on this web site are the property of the company, SJ Tech.</p>
+    </details>
+    
+    <br>
+    <address style="text-align: left">
+    SJ Tech <br>
+    8549 Costa Rd 4432, SD, 92211 <br>
+    Tel: (333) 999-4434 | Fax: (333) 999-1234
+    </address>
+
+</body>
+</html>

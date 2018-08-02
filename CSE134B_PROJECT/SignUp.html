@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Description" content="issue tracker">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#317EFB"/>
+    <link rel="stylesheet" href="../test.css">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#317EFB"/>
+    <title>SignUp</title>
+    
+
+</head>
+<body>
+    <h1>SignUp page</h1>
+    <div style="text-align: right; color: red">
+        <p>You are on firebase version now</p>
+    </div>
+    <form action="./index2.html" style="text-align: right">
+        <button type="submit">Go to REST Verson</button>
+    </form>
+
+    <div  id="login_div" class="main-div" style="border: 5px solid black">
+        <p style="font-size: 23pt"><b>Please fill in this form to create your account!</b></p>
+
+        <label style="font-size: 12pt" for="txtEmail"><b>Email: </b></label>
+        <input id="txtEmail" type="email" name="NameTBD" placeholder="Enter Your email address" size="10">
+        <br>
+    
+        <label style="font-size: 11pt" for="txtPassword"><b>Your password: </b></label>
+        <input id="txtPassword" type="password" name="password" placeholder="Enter Your password" size="10">
+        <br>
+            
+        <button  onclick="createID()" id="btnSignUp" class="btn btn-secondary">Sign Up</button>
+      
+    </div>
+
+
+    <div id="user_div" class="loggedin-div">
+        <p id="user_para">welcome!</p>
+
+         <form action="./index.html">
+            <button type="submit">Going to your issue list</button>
+        </form>
+        <button onclick="logout()" id="btnLogout" class="btn btn-action hide">Log out</button>
+    </div>  
+
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div>
+        <form action="../index.html">
+            <button style="font-size: 10pt" type="submit">Return to login page</button>
+        </form>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB2wrMTytnMUC_Mpo-VO_fqP0vea0PkTaU",
+        authDomain: "mylife-e8b4e.firebaseapp.com",
+        databaseURL: "https://mylife-e8b4e.firebaseio.com",
+        projectId: "mylife-e8b4e",
+        storageBucket: "mylife-e8b4e.appspot.com",
+        messagingSenderId: "439760436065"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    
+    <script src="./Vworker.js"></script>
+    <script src="./app2.js"></script>
+
+    
+    <address>
+    SJ Tech <br>
+    8549 Costa Rd 4432, SD, 92211 <br>
+    Tel: (333) 999-4434 | Fax: (333) 999-1234
+    </address>
+    
+</body>
+</html>

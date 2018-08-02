@@ -1,0 +1,320 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Description" content="issue tracker">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#317EFB"/>
+    <link rel="stylesheet" href="./test.css">
+    <link rel="manifest" href="./manifest.json">
+    <title>Issue Lists</title>
+
+    <style>
+        .dd {
+            width: 5%;
+            padding: 12px 20px;
+            border: 8px solid #4CAF50;
+            border-radius: 4px;
+        }
+    </style>
+    
+</head></div>
+<body>
+    <h1>Issue List</h1>
+    <hr>
+    <div style="text-align: right; color: red">
+        <p>You are on REST version now</p>
+    </div>
+    <form action="./index.html" style="text-align: right">
+        <button type="submit">Go to Firebase Verson</button>
+    </form>
+    
+
+    <div style="border:  2px solid black;">
+    <blockquote>
+            Some of the trouble with HTML and CSS lies with the fact that both languages are <em>fairly</em> 
+            simple, and often <small>developers</small> don't take <strong>them seriously</strong>, in terms of making sure the code 
+            is well-crafted, efficient, and semantically describes the purpose of the features on the page
+          
+        -<cite><a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/HTML_and_CSS">MDN web docs</a></cite>
+    </blockquote>
+    </div>
+
+
+    <h2>Issue Lists</h2>
+    
+    <table id="table">  
+        <tr>
+            <th>Open?</th>
+            <th>Detail</th>
+            <th>Isseu Name</th>
+            <th>Issue Type</th>
+            <th>Issue Description</th> 
+        </tr>
+   
+      
+        <tr>         
+            <td style="color: blue ">OPEN</td>
+            <td><a href="issue2/Heading.html">detail</a></td>
+            <td>Headings and Sections</td>
+            <td>Heading and Sections type tags</td>
+            <td>Tags like h1 and section should be explored.</td>
+
+        </tr>
+
+        <tr>
+            <td style="color: blue ">OPEN</td>
+            <td><a href="issue2/Browser.html">detail</a></td>
+            <td>Browser</td>
+            <td>Browser such as Googl Crome, Firfox </td>
+            <td>Some of the most common cross browser HTML and CSS problems.</td>
+            
+        </tr>
+
+        <tr>
+            <td style="color: blue ">OPEN</td>
+            <td><a href="issue2/Image.html">detail</a></td>
+            <td>Images</td>
+            <td>img and picture tags</td>
+            <td>Some problems about wrong use of tags related to images</td>
+            
+        </tr>
+        <tr>
+            <td style="color: blue ">OPEN</td>
+            <td><a href="issue2/Media.html">detail</a></td>
+            <td>Media</td>
+            <td> video and audio tags</td>
+            <td>Some issuses about wrong use of tags related to media</td>
+          
+        </tr>
+        <tr>
+            <td style="color: blue ">OPEN</td>
+            <td><a href="issue2/Iframe.html">detail</a></td>
+            <td>Iframe</td>
+            <td> Ifram tag</td>
+            <td>Some problems about wrong use of tags realted to Iframe</td>
+            
+        </tr>
+        <tr>
+            <td style="color: blue ">OPEN</td>
+            <td><a href="issue2/Form.html">detail</a></td>
+            <td>Form</td>
+            <td> form; tag, etc</td>
+            <td>Test the form and all types of input tags</td>
+            
+        </tr>
+   
+        <tr>  
+            <td style="color: blue ">OPEN</td>
+            <td><a href="issue2/Structure.html">detail</a></td>
+            <td>Structure</td>
+            <td> div, span and section tags, etc</td>
+            <td>Problems users have when they use inproperly tags to construct HTML structure</td>
+    
+        </tr>
+    
+    </table>
+    <br>
+
+    
+    <div class="T1" style="border: 2px solid #4CAF50; width: 100%; align-items: center; font-weight: bolder">
+        <p style="font-size: 30px; color: #4CAF50"><strong>Add, Edit, and Delete issues</strong></p>
+        <p style="color: #4CAF50">Click an issue you want to change!! on the table, so you can you the information in the input boxes below!</p>
+        <label for="name">Issue Name</label><br>
+        <input type="text" name="name" id="name" placeholder="Enter Issue Name" ><br>
+
+        <label for="type">Issue Type</label><br>
+        <input type="text" name="type" id="type" placeholder="Enter Issue Type"><br>
+            
+        <label for="description">Issue Description</label><br>
+        <input type="text" name="description" id="description" placeholder="Enter the Description about the issue"><br>
+           
+        <label for="g">This is open?</label><br>       
+        <select name="cars" size="2" id="g" multiple>
+                <option value="O" style="color: blue; font-weight: bold">OPEN</option>
+                <option value="C" style="color: red; font-weight: bold">CLOSE</option>
+        </select>
+               
+        <p id="b" style="color: blue"></p>
+        <p id="r" style="color: red"></p>
+        <br>
+
+        <button style type="button" onclick="addRow(); return false;">Add</button>  
+        <button onclick="editRow()">Edit</button>  
+        <button onclick="deleteConfirm()">Delete</button>  
+    </div>
+    <br>
+    
+    <script src="./Vworker.js"></script>
+
+    <script>
+        var rIndex, table = document.getElementById("table");
+        var id = 2;
+        
+        //Add an issue
+        function addRow() {
+            var checkvalue = document.getElementById("g").value;
+            var name = document.getElementById("name").value;
+            var type = document.getElementById("type").value;
+            var description = document.getElementById("description").value;
+
+            //add an issue in the table
+            var newRow = table.insertRow(table.length);
+            newRow.setAttribute("data-index-number", id);
+            
+            id = id +1;
+            var col1 = newRow.insertCell(0);
+            var col2 = newRow.insertCell(1);
+            var col3 = newRow.insertCell(2);
+            var col4 = newRow.insertCell(3);
+            var col5 = newRow.insertCell(4);
+
+            var open = document.createElement('P');
+            open.innerHTML = "OPEN";
+            open.setAttribute("style", "color:blue" );
+
+            var close = document.createElement('P');
+            close.innerHTML = "CLOSE";
+            close.setAttribute("style", "color:red" );
+          
+            if(checkvalue == "O") {
+                col1.innerHTML = "";
+                col1.appendChild(open);
+            }else if(checkvalue =="C"){
+                col1.innerHTML = "";
+                col1.appendChild(close);
+            }
+           
+            var link = document.createElement('a');
+            link.setAttribute("href", "#");
+            link.innerHTML = "detail";
+            
+            col2.appendChild(link);
+            col3.innerHTML = name;
+            col4.innerHTML = type;
+            col5.innerHTML = description;
+
+            //add an issue in json server.
+            const payload = {"issue_name": name, "issue_type": type, "description": description};
+            var ourRequest2 = new XMLHttpRequest();
+            var myData = JSON.stringify(payload);
+            ourRequest2.open('POST', 'http://localhost:3000/issues');
+            ourRequest2.setRequestHeader("Content-type", "application/json");   
+            ourRequest2.onreadystatechange = function () {
+                if (ourRequest2.readyState === 4 && ourRequest2.status === 200) {
+                    var json = JSON.parse(ourRequest2.responseText);
+                    console.log("sucess!");
+                }
+            };
+            ourRequest2.send(myData);    
+
+            selectRow();         
+        }
+        function selectRow() {
+            for(var i =1; i < table.rows.length; i++) {
+                table.rows[i].onclick = function() {
+                    rIndex = this.rowIndex;      
+                    document.getElementById("name").value = this.cells[2].innerHTML;
+                    document.getElementById("type").value = this.cells[3].innerHTML;
+                    document.getElementById("description").value = this.cells[4].innerHTML;   
+                };
+            }
+        }    
+    
+        selectRow();
+
+        //Edit an issue
+        function editRow() {
+
+            var checkvalue = document.getElementById("g").value;
+            var name = document.getElementById("name").value;
+            var type = document.getElementById("type").value;
+            var description = document.getElementById("description").value;
+
+            //edit an issue in the table
+            var checkbox = document.createElement("INPUT");
+            checkbox.setAttribute("type", "checkbox");
+            
+            var open = document.createElement('P');
+            open.innerHTML = "OPEN";
+            open.setAttribute("style", "color:blue" );
+
+            var close = document.createElement('P');
+            close.innerHTML = "CLOSE";
+            close.setAttribute("style", "color:red" );
+
+
+            if(checkvalue == "O") {
+                table.rows[rIndex].cells[0].innerHTML = "";
+                table.rows[rIndex].cells[0].appendChild(open);
+            }else if(checkvalue =="C"){
+                table.rows[rIndex].cells[0].innerHTML = "";
+                table.rows[rIndex].cells[0].appendChild(close);
+            }
+
+            var link = document.createElement('a');
+            link.setAttribute("href", "#");
+            link.innerHTML = "detail";
+            
+            table.rows[rIndex].cells[2].innerHTML = name;
+            table.rows[rIndex].cells[3].innerHTML = type;
+            table.rows[rIndex].cells[4].innerHTML = description;
+
+            //Edit an issue in json server
+            var row = table.rows[rIndex];
+            var index = row.getAttribute("data-index-number")
+  
+            const payload = {"issue_name": name, "issue_type": type, "description": description};
+            var ourRequest2 = new XMLHttpRequest();
+            var myData = JSON.stringify(payload);
+            ourRequest2.open('PUT', 'http://localhost:3000/issues/'+index);
+            ourRequest2.setRequestHeader("Content-type", "application/json");   
+            ourRequest2.onreadystatechange = function () {
+                if (ourRequest2.readyState === 4 && ourRequest2.status === 200) {
+                    var data = JSON.parse(ourRequest2.responseText);
+                    console.log("sucess!");
+                }
+            };
+            ourRequest2.send(myData); 
+        }
+        
+        //Delete an issue
+        function deleteRow() {
+
+            var checkvalue = document.getElementById("g").value;
+            var name = document.getElementById("name").value;
+            var type = document.getElementById("type").value;
+            var description = document.getElementById("description").value;
+          
+            //Delete an issue in json server
+            var row =table.rows[rIndex];
+            var index = row.getAttribute("data-index-number")
+            var ourRequest2 = new XMLHttpRequest();
+            ourRequest2.open('DELETE', 'http://localhost:3000/issues/'+index);
+            ourRequest2.send();
+
+            //Delete an issue in the table
+            table.deleteRow(rIndex);
+        }
+        
+        //Confirm message
+        function deleteConfirm() {
+            var x = confirm("Are you sure to delete this issue???");
+            if(x) {
+                return deleteRow();
+            }else {
+                return false;
+            }
+        }
+    </script>
+    <br>
+
+
+    <address>
+    SJ Tech <br>
+    8549 Costa Rd 4432, SD, 92211 <br>
+    Tel: (333) 999-4434 | Fax: (333) 999-1234
+    </address>
+</body>
+</html>

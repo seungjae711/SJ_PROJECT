@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image</title>
+    <link rel="stylesheet" href="../../test.css">
+
+</head>
+<body>
+<article>
+    <header>
+        <h1>Issue Name: Images</h1>
+        <h2>Issue Type: Feature</h2>    
+    </header>
+    
+    <div>
+        <h3>Issue Description</h3>
+        <p><strong>Problem 1:</strong> Table Width, Outlook doesn’t like max-width and min-width CSS values, even if inline.</p>
+        <p><strong>Problem 2:</strong> Exploding Image Size, ended up calling the full image element separately with adjusted width properties and wrapping the second image in a div that would hide the original image only if the email client is mso.</p>
+    </div>
+
+    <br>
+
+    <dl>
+        <dt><strong>solution1</strong></dt>
+        <dd>Change the size of the imgaes</dd>
+        <dt><strong>solution2</strong></dt>
+        <dd>Change the extention of the images</dd>
+        <dt><strong>souution3</strong></dt>
+        <dd>Try different images</dd>
+    </dl>
+    
+
+    <picture>
+        <img src="../../image/leaves_doily.svg" alt="leaves">
+    </picture><br><br>
+    
+    <label><strong>Click what you want to know</strong></label><br>
+    <img src="../../image/HC.jpg" width="400" height="350" alt="Planets" usemap="#HC" />
+    <map name="HC">
+            <area shape="rect" coords="1,1,199,349" alt="HTML" href="../../image/C.jpg">
+            <area shape="rect" coords="201,1,399,349" alt="CSS" href="../../image/H.jpg">
+    </map>
+
+</article>
+
+
+<br>
+<form action="../index.html">
+    <button type="submit">Back to issue list page</button>
+</form>
+
+<br><br><br><br>
+<address>
+SJ Tech <br>
+8549 Costa Rd 4432, SD, 92211 <br>
+Tel: (333) 999-4434 | Fax: (333) 999-1234
+</address>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Media</title>
+    <link rel="stylesheet" href="../../test.css">
+    <style>
+        span {
+            font-size: 20pt;
+            font-weight: bold
+    
+        }
+    </style>
+
+</head>
+<body>
+<main>
+<article>
+    <header>
+        <h1>Issue Name: Media</h1>
+        <h2>Issue Type: Feature</h2>    
+    </header>
+    
+    
+    <section aria-label="Description">
+        <h3>Issue Description</h3>
+        <dl>
+                <dt>HTML media capture</dt>
+                
+                    <dd><span>1)Privacy</span> <br>
+                        The Media Capture spec's Security and privacy considerations section is non-normative; it explicitly doesn't add those as normative requirements on the UA.
+                    </dd> 
+                    <dd><span>2)Android: compress videos before uploading</span><br>
+                        iOS compresses the video before uploading down to 360x480 but Android does not, it just uses whatever resolution is set on the device.
+                    </dd>
+                    <dd><span>3)Limit the length of the recorded video</span><br>
+                        The ability to limit the length of the video recorded through HTML Media Capture.
+                    </dd>    
+        </dl>
+
+    </section>
+
+    
+</article>
+</main>
+
+<br>
+
+<video width="400" controls>
+    <source src="../../image/fun.mp4" type="video/mp4">
+    <track kind="descriptions" src=http://funnymp4.net/download/5257/selfie_ne_meri_leli_aaj_-_very_funny srclang=en label="fun videio for visitors">
+</video>
+
+<br>
+<form action="../index.html">
+    <button type="submit">Back to issue list page</button>
+</form>
+
+<br><br><br><br>
+<address>
+SJ Tech <br>
+8549 Costa Rd 4432, SD, 92211 <br>
+Tel: (333) 999-4434 | Fax: (333) 999-1234
+</address>
+</body>
+</html>

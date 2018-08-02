@@ -1,0 +1,43 @@
+{
+    "name": "issue" ,
+    "short_name": "issue",
+    "start_url": "./index.html",
+    "theme_color": "#317EFB",
+    "background_color": "#3E4EB8",
+    "icons": [
+        {
+          "src": "./icons/128image.png",
+          "sizes": "128x128",
+          "type": "image/png"
+        },
+        {
+            "src": "./icons/144image.png",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "./icons/192image.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "./icons/256image.png",
+            "sizes": "256x256",
+            "type": "image/png"
+          },
+          {
+            "src": "./icons/384image.png",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "./icons/512image.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+
+      ],
+    "display": "standalone",
+    "orientation": "portrait"
+
+}

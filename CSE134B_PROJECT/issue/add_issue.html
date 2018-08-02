@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Add Issue</h1>
+    
+<form action="../issue_list.html">
+    <div class="T1">
+        <label for="Name">Issue Name</label><br>
+        <input type="text" name="Name" id="Name" placeholder="Enter Issue Name" ><br><br>
+
+        <label for="Type">Issue Type</label><br>
+        <input type="text" name="Type" id="Type" placeholder="Enter Issue Type"><br><br>
+        
+        <label for="Description">Issue Description</label><br>
+        <input type="text" name="Description" id="Description" placeholder="Enter the Description about the issue">
+
+        <br>
+        <br>
+
+        <label for="fileUpload">*Issue Attachment</label><br>
+        <input type="file" name="fileUpload" id="fileUpload"><br><br>
+
+
+        <button onclick="addHtmlTableRow();" type="submit">submit issue</button>  
+        <button type="reset">Reset</button>
+    <br>
+    </div>
+</form>
+    
+    
+    <!-- The dialog element is not supported in all browsers -->
+    <dialog open>
+        We are always happy with listening your opinion!
+    </dialog>
+    
+    <br><br><br><br>
+    <address>
+    SJ Tech <br>
+    8549 Costa Rd 4432, SD, 92211 <br>
+    Tel: (333) 999-4434 | Fax: (333) 999-1234
+    </address>
+
+
+</body>
+</html>
